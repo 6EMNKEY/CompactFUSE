@@ -4,3 +4,6 @@ PIpeline for integration of diferent gene fusion detection tools, providing a us
 ### Tools used :
 
 - JAFFA
+- Chimerascan
+- FusionCatcher
+- FusionBloom
