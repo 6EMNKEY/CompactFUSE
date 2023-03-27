@@ -1,5 +1,5 @@
 # CompactFUSE
-PIpeline for integration of diferent gene fusion detection tools, providing a user frendly environement.
+Pipeline for integration of diferent gene fusion detection tools, providing a user frendly environement.
 
 ### Tools used :
 
@@ -7,3 +7,5 @@ PIpeline for integration of diferent gene fusion detection tools, providing a us
 - Chimerascan
 - FusionCatcher
 - FusionBloom
+
+#break_point_analisis.py
