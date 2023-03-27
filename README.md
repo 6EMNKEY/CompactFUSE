@@ -31,3 +31,5 @@ e) These breakpoint regions are aligned using a smith and waterman based algorit
 
 *) Also we need to point out that the breakpoints region reads in the 3’ side of the 5’ fusion gene have to be reversed along with the sequences of
 comparison for a proper alignment.
+
+  
