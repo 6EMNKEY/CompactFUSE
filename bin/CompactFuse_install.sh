@@ -85,3 +85,41 @@ if $j; then
     cd ../JAFFA_INS
     ./install_linux64.sh
 fi
+
+
+os=$(uname -s)
+
+# Install the JDK based on the operating system
+if [[ "$os" == "Linux" ]]; then
+  # Linux OS
+  echo "Detected Linux OS."
+  echo "Installing OpenJDK..."
+
+  # Download and extract the JDK tarball
+  wget -O ../jdk.tar.gz https://download.oracle.com/java/20/latest/jdk-20_linux-x64_bin.tar.gz
+  tar -xzf ../jdk.tar.gz 
+
+#   # Set the environment variables
+#   export JAVA_HOME=/usr/lib/jvm/jdk*/   # Update the path according to your JDK version
+#   export PATH=$JAVA_HOME/bin:$PATH
+
+elif [[ "$os" == "Darwin" ]]; then
+  # macOS
+  echo "Detected macOS."
+  echo "Installing AdoptOpenJDK..."
+
+  # Install AdoptOpenJDK using Homebrew
+  brew update
+  brew tap AdoptOpenJDK/openjdk
+  brew install --cask adoptopenjdk
+
+else
+  # Unsupported operating system
+  echo "Unsupported operating system: $os. JDK installation cannot proceed."
+  exit 1
+
+fi
+
+# Verify JDK installation
+java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
+echo "JDK installation completed. Java version: $java_version"
