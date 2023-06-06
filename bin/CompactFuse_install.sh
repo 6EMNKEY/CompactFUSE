@@ -61,6 +61,13 @@ fi
 if $s; then
     rm -r ../Starfusion_INS/*
     rm -r ../Starfusion_INS/.git* 
+    sudo apt install cpanminus
+    sudo cpanm DB_File
+    sudo cpanm URI::Escape
+    sudo cpanm Set::IntervalTree
+    sudo cpanm Carp::Assert
+    sudo cpanm JSON::XS
+    sudo cpanm PerlIO::gzip
     git clone --recursive https://github.com/STAR-Fusion/STAR-Fusion ../Starfusion_INS
     cd ../Starfusion_INS
     make
